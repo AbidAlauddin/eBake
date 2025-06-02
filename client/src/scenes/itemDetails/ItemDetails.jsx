@@ -29,12 +29,12 @@ const ItemDetails = () => {
     };
 
     async function getItem() {
-        const item = await axios.get(`http://localhost:1337/api/items/${itemID}?populate=image`);
+        const item = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/items/${itemID}?populate=image`);
         setItem(item.data.data)
     }
 
     async function getItems() {
-        const items = await axios.get(`http://localhost:1337/api/items?populate=image`);
+        const items = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/items?populate=image`);
         setItems(items.data.data)
     }
 
@@ -52,7 +52,7 @@ const ItemDetails = () => {
                         alt={item?.name}
                         width='100%'
                         height='100%'
-src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url || item?.attributes?.image?.data?.attributes?.url}`}
+                        src={`${import.meta.env.VITE_API_BASE_URL}${item?.attributes?.image?.data?.attributes?.formats?.medium?.url || item?.attributes?.image?.data?.attributes?.url}`}
                         style={{ objectFit: 'contain' }}
                     />
                 </Box>
