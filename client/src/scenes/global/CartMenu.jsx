@@ -81,7 +81,7 @@ const CartMenu = () => {
                                                 alt={item?.name}
                                                 width='123px'
                                                 height='164px'
-                                                src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url || item?.attributes?.image?.data?.attributes?.url}`}
+                                                src={`${import.meta.env.VITE_API_BASE_URL}${item?.attributes?.image?.data?.attributes?.formats?.medium?.url || item?.attributes?.image?.data?.attributes?.url}`}
                                                 style={{ objectFit: 'cover' }}
                                             />
                                         </Box>

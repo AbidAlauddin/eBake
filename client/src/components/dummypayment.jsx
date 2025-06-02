@@ -19,7 +19,7 @@ export default function DummyPayment() {
     }
 
     try {
-      const response = await fetch('http://localhost:1337/payment/pay', {
+      const response = await fetch(`${API_BASE_URL}/payment/pay`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

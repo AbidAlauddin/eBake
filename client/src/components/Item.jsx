@@ -47,7 +47,7 @@ const Item = ({ item, width }) => {
                         alt={name}
                         width='300px'
                         height='400px'
-                        src={`http://localhost:1337${imageUrl}`}
+                        src={`${import.meta.env.VITE_API_BASE_URL}${imageUrl}`}
                         onClick={() => navigate(`/item/${item.id}`)}
                         style={{ 
                             cursor: 'pointer',

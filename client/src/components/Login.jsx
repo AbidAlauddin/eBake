@@ -11,7 +11,7 @@ const Login = () => {
     const handleLogin = async () => {
         setError('');
         try {
-            const response = await fetch('http://localhost:1337/api/auth/local', {
+            const response = await fetch(`${API_BASE_URL}/api/auth/local`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ identifier, password }),
