@@ -24,7 +24,7 @@ const ShoppingList = () => {
 
     // Get API items
     async function getItems() {
-        const items = await axios.get('http://localhost:1337/api/items?populate=image');
+        const items = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/items?populate=image`);
         dispatch(setItems(items.data.data));
     }
 
