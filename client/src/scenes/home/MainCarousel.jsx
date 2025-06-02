@@ -9,16 +9,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { shades } from '../../theme'
 
-// imports all image from assets folder
-const importAll = (r) =>
-    Object.keys(r).reduce((acc, item) => {
-        acc[item.replace("./", "")] = Object(item);
-        return acc;
-}, {});
-
-export const heroTextureImports = importAll(
-    import.meta.globEager("/src/assets/*.(jpeg|jpg|png|svg)")
-);
+const images = [
+    '/1.jpeg',
+    '/3.jpg',
+    '/4.jpg',
+    '/5.jpg',
+    '/6.jpeg',
+    // tambahkan nama file gambar lain yang ada di folder public
+];
 
 const MainCarousel = () => {
     const isNonMobile = useMediaQuery('(min-width: 600px)');
@@ -62,10 +60,10 @@ const MainCarousel = () => {
                 </IconButton>
             )}
         >
-            {Object.values(heroTextureImports).map((texture, index) => (
+            {images.map((img, index) => (
                 <Box key={`carousel-image-${index}`}>
                     <img
-                        src={texture}
+                        src={img}
                         alt={`carousel-${index}`}
                         style={{
                             width: '100%',
