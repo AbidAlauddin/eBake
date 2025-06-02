@@ -4,7 +4,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://frontend-railway-url.app'], // Ganti dengan URL frontend Railway Anda
+      origin: ['https://ebake.netlify.app'], // Ganti dengan URL frontend Railway Anda
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
     },
   },
