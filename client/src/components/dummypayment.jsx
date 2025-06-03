@@ -19,7 +19,7 @@ export default function DummyPayment() {
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}/payment/pay`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/payment/pay`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

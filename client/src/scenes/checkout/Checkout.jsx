@@ -120,7 +120,7 @@ const Checkout = () => {
                 const token = localStorage.getItem('jwtToken');
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-                const response = await fetch(`${API_BASE_URL}/api/billings`, {
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/billings`, {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
             try {
                 const token = localStorage.getItem('jwtToken');
-                const response = await fetch(`${API_BASE_URL}/api/checkouts`, {
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/checkouts`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -201,7 +201,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
             })),
         };
 
-        const response = await fetch(`${API_BASE_URL}/api/orders`, {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/orders`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(requestBody),
